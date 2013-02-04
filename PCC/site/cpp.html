@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<!-- page specific stylesheet here -->
+
+		<link href="prettify/src/prettify.css" type="text/css" rel="stylesheet" />
+		<link href="prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="prettify/src/prettify.js"></script>
+
+		<link href="styles/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body onload="prettyPrint()">
+		<div class="header">
+			<span class="title">A Beginner's Guide to C++</span>
+			Get Low.
+		</div>
+
+		<div class="content">
+			<span class="title">Introduction</span>
+			<p>
+				So now that compilers have been designed and there's no need for some low level manipulation of bits, how do we actually do something with our newfound computers? Enter C++. A relatively low, strictly typed language from which many things spawn (well, from C) We'll begin to work our way up from here.
+		</p>
+		</div>
+
+		<div class="content">
+			<span class="title">The Basics</span>
+			So on the low level, you have registers which allow for reading and writing. When you step up to C++, you have variables!
+<!-- CODE -->
+<pre class="prettyprint">
+int iAmEmptyInside;
+int bits = 0101010111;
+double realNumbers = 0.5;
+char aLetter = 'a';
+string aWord = "no way this is so legit 01010";
+</pre>
+<!-- END CODE -->
+			<p>
+			 	The syntax is <code class="prettyprint">type varName = value</code>. You have to specify a type for the variable, a name that you can use to reference the variable, and then you can use it. If you assign it a value as soon as you declare it, this is called initialization, and it helps avoid common errors. A few things to note, while you don't have to initialize them, you *MUST* type your variables. This way, the compiler knows what kind of data it's dealing with and how exactly to deal with it (remember, it still gets converted to bits and stored in registers, nothings changed) and as a way to remind you what you're working with. Some types can work together. Some can't. Others work together in ways you'd expect (or not). For example:
+			</p>
+<!-- CODE -->
+<pre class="prettyprint">
+string newWord = "Just some words.";
+newWord += ' ';     // adds a space to the end!
+newWord += aLetter; // adds a letter to the end!
+newWord += aWord;   // adds a whole other word!
+newWord += ' ';     // another space
+newWord += bits;    // numbers even!	
+// The result:
+// Just some words. a no way this is so legit 01010 0101010111</pre>
+<!-- END CODE -->
+			<p>
+				As a quick note, Strings are not actually implicitly defined by C++, instead there's a library that implements string functionality. What's a library? It's a bunch of C++ that gets copy and pasted into your code. Yes indeed. This is done by specifying an "includes". Just throw this at the top: <code class="prettyprint">#include &lt;string&gt;</code>, this'll be covered in more detail in a second. Also note the '+=' sign. This takes adds the right hand side to the left hand side. For example:
+			</p>
+<!-- CODE -->
+<pre class="prettyprint">
+int anInt = 7;
+anInt = anInt + 5; // is 13
+int anotherInt = 7;
+anotherInt += 5; // is 13</pre>
+<!-- END CODE -->
+			We'll touch up on other operators as we see them. (<a href="http://www.cplusplus.com/doc/tutorial/operators/">here's a list of them</a>)
+			
+			<p>
+				What about instructions? Well, we've already used them. All the operators above ( =, +=, etc) are instructions. They actually simultaneously read and write. Neat, eh? But this only gets us so far. With C++ we can identify a set of operations to use; we call them functions. Again, this is similar to your high school algebra class, where f(x) is a function that takes x and does something to it. For example, f(x) = x + 5. This takes some x (typically a real number), and adds five to it. So f(5) is equivalent to 10. This is the same for C++. Without further ado, here's f(x) in code.
+			</p>
+<!-- CODE -->
+<pre class="prettyprint">
+int f(int x)
+{
+	int y = x + 5;
+	return y;
+}</pre>
+<!-- END CODE -->
+			<p>
+				Note that we specified a return type, and a type for x. This is the same as explicity stating that x is a real number, except here we're specifying that x is an integer (no fractional/decimal values!). We also must specify the return type; a function is just like a variable except it stores a bunch of sequential operations in memory. the syntax is <code class="prettyprint">return_value functionName(argument_type argument_name);</code>. The actual information of the function is contained in the curly brackets. so if we did <code class="prettyprint">f(5)</code> we'd indeed get 10. A few things worth noting: no matter what we put between the parenthesis, we still refer to whatever that is as x. This is, again, similar to the functionality of the f(x) algebra comparison we made. The argument x takes on whatever value we pass into it, be it a variable or a const, it's always going to end up being called x. I declared a variable, y, inside the function. This variable is just a container for our x, and gives us something to work with before we return our result. This example was simple enough that it wasn't needed, and we could've done this:
+			</p>
+<!-- CODE -->
+<pre class="prettyprint">
+int f(int x)
+{
+	return (x + 5);
+}</pre>
+<!-- END CODE -->
+			<p>
+				Which returns the same exact thing. Actually, this is what the compiler does, too. It replaces y everywhere with it's definition. But we like to be clear, right?
+			</p>
+			<br>
+			From here, we can begin writing some interesting things.
+		</div>
+
+		<div class="content">
+			<span class="title">main()</span>
+			<p>
+				There are all sorts of ways to get started with your program. Here are the variants (for reference):
+			</p>
+<!-- CODE -->
+<pre class="prettyprint">
+int main();	// the default
+int main(void);	// means the same as above
+int main(int argc, char *argv[]);  // fancy!
+int main(int argc, char **argv);  // fanciest!</pre>
+<!-- END CODE -->
+		<p>
+			Don't get caught up in the details just yet. Use <code class="prettyprint">int main()</code> for now. This is now and forever more the entry point to your program. When your program is run, all the computer does is make a call to this main() function. It's the first step.
+		</p>
+
+		<p>
+			Moving on, one of the most important things is getting output from your computer. We'll invoke a little bit of black magic to make this happen. Firstly, include the following at the top of your file;
+		</p>
+<!-- CODE -->
+<pre class="prettyprint">
+#include &lt;iostream&gt;
+using namespace std
+</pre>
+<!-- END CODE -->
+		<p>Just like the <code class="prettyprint">#include &lt;string&gt;</code> this is just some requisite functionality. Anything with a # sign is a message to the compiler, in this case, <code class="prettyprint">#include</code> is essentially an instruction to copy and paste some code into your program. This specific include (iostream) includes functionality for writing to the console. The <code class="prettyprint">using namespace std</code> should be considered black magic for now. All you need to know is that namespaces are ways of keeping code well-organized.</p>
+		<p>
+			Let's actually see code that outputs something.
+		</p>
+<!-- CODE -->
+<pre class="prettyprint">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+	cout &lt;&lt; "Hello World!" &lt;&lt; endl;
+}
+</pre>
+<!-- END CODE -->
+		<p>
+			This outputs Hello World! to whatever console you happen to be using. Let's analyze the parts. "cout" is simply your outgoing message, anything 'inside' the cout is what goes out to the console, when we write <code class="prettyprint"><< "Hello World!"</code>, the double less-than signs essentially mean "Take what follows, put it in the previous thing". The previous thing being cout, the outgoing message. 'endl' is a keyword. It is simply a code-word for new line. (e.g. when you press Enter on your keyboard in a text editor).
+		</p>
+
+		</div>
+
+		<div class="footer">
+			<a href="index.html">Return</a>
+		</div>
+	</body>
+</html>

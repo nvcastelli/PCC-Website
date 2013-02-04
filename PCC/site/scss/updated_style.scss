@@ -1,0 +1,105 @@
+
+/*CONST*/
+$background: #272822;
+$text: #F8F8F2;
+$h: darken(#79ABFF, 10%);
+
+body {
+	padding: 0;
+	margin: 0 auto;
+
+	background: $background;
+	background-image: url("../images/office_bg.png");
+
+	color: $text;
+
+	font-family: Helvetica;
+	text-align: center;
+}
+
+a {
+	color: lighten($h, 10%);
+
+	&:hover {
+		color: lighten($h, 25%);
+	}
+}
+
+span.title {
+		display: block;
+		margin: 5px 0;
+		
+		color: $h;
+		text-decoration: underline;
+
+		font-weight: bold;
+		font-size: 1.25em;
+}
+
+div.header {
+	position: relative;
+	
+	min-width: 300px;
+	width: 50%;
+	height: auto;
+
+	margin: 15px auto;
+	padding: 5px;
+	padding-bottom: 10px;
+
+	background: darken($background, 7%);
+
+	border: 1px solid white;
+
+	span.title {
+		font-size: 1.5em;
+	}
+
+	p { 
+		text-indent: 25px; 
+		text-align: left; 
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+div.content {
+	min-width: 300px;
+	width: 60%;
+	height: auto;
+
+	margin: 15px auto;
+	padding: 5px;
+	padding-bottom: 10px;
+
+	background: darken($background, 7%);
+
+	border: 1px solid white;
+
+	p { 
+		text-indent: 25px; 
+		text-align: left; 
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+div.footer {
+	min-width: 300px;
+	width: 50%;
+	height: auto;
+
+	margin: 15px auto;
+	padding: 5px;
+
+	background: darken($background, 7%);
+
+	border: 1px solid white;
+
+	p { 
+		text-indent: 25px; 
+		text-align: left; 
+		margin: 0;
+		padding: 0 10px;
+	}
+}

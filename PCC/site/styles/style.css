@@ -1,0 +1,96 @@
+/*CONST*/
+body {
+  padding: 0;
+  margin: 0 auto;
+  background: #272822;
+  background-image: url("../images/office_bg.png");
+  color: #f8f8f2;
+  font-family: serif;
+  font-size: 1.1em;
+  text-align: center; }
+
+pre {
+  position: relative;
+  margin: 0 0;
+  text-align: left;
+  overflow-y: visible;
+  width: 50px;
+  max-width: 400px;
+  height: auto; }
+  pre * {
+    position: relative; }
+
+code {
+  padding: 3px 3px; }
+
+div.codecontainer {
+  position: relative;
+  display: block;
+  min-width: 100px;
+  height: auto; }
+
+a {
+  color: #79abff; }
+  a:hover {
+    color: #c6dbff; }
+
+span.title {
+  display: block;
+  margin: 5px 0;
+  color: #468bff;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.25em; }
+
+div.header {
+  position: relative;
+  min-width: 300px;
+  width: 50%;
+  height: auto;
+  margin: 15px auto;
+  padding: 5px 5px;
+  padding-bottom: 10px;
+  background: #141512;
+  border: 1px solid white; }
+  div.header span.title {
+    font-size: 1.5em; }
+  div.header p {
+    text-indent: 25px;
+    text-align: left;
+    margin: 0;
+    padding: 0 10px; }
+
+div.content {
+  min-width: 300px;
+  width: 60%;
+  height: auto;
+  margin: 15px auto;
+  padding: 5px 15px;
+  padding-bottom: 10px;
+  background: #141512;
+  border: 1px solid white; }
+  div.content p {
+    margin: 0;
+    text-indent: 25px;
+    text-align: left;
+    margin-bottom: 3px;
+    padding: 0 10px; }
+  div.content ul {
+    position: relative;
+    left: 75px;
+    text-align: left;
+    display: inline; }
+
+div.footer {
+  min-width: 300px;
+  width: 50%;
+  height: auto;
+  margin: 15px auto;
+  padding: 5px;
+  background: #141512;
+  border: 1px solid white; }
+  div.footer p {
+    text-indent: 25px;
+    text-align: left;
+    margin: 0;
+    padding: 0 10px; }

@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>PCC - Data Structures</title>
+		<link href="styles/ds.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="styles/style.css" media="all" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<a name="top"></a>
+		<div class="head">
+			<span class="title">Data Structures</span>
+			Life just got easier.
+		</div>
+
+		<div class="content">
+			<span class="title">Array</span><br>
+			<p>
+				Sets of contiguous memory.
+			</p>
+		</div>
+		<div class="content">
+			<span class="title">Vector</span><br>
+				 <p>Vectors are essentially just a wrapper around Arrays, with some nice functionality. Just like an array, you have contiguous blocks of memory that you find using an offset. The distinguishing feature is the ability for dynamic sizes. A vector doesn't need to know how many blocks you need, it'll take care of that for you. It's pretty magical. The magic lies in the fact that when you exceed the size of the vector, it'll make a bigger array, stuff all the old stuff into it, and then tack on the newest element. All unbeknownst to you.
+				 </p>
+				<p> You might think it's inefficient to resize and copy the array everytime you add a new element, and you're right. Typically vectors will make an array with extra empty elements. C++ typically doubles the space everytime you resize it. This may or may not be what you want. (e.g. if you have 5000 blocks, and add one more, you get 10000 blocks, which equates to 5000 blocks for 1 element, if they remain unused). </p>
+		</div>
+		<div class="content">
+			<span class="title">List</span><br>
+			<p>
+				Linking things together, like pages of a book.
+			</p>
+		</div>
+		<div class="content">
+			<span class="title">Stack</span><br>
+				<p>This is the data structure that essentially runs your computer. Recursive functions are a good example of this. This structure follows the FILO philosophy (First In, Last Out), where you put things on the stack, and take off from the top. The most common example is a stack of lunch trays, you stack them up, and you keep taking from the top.</p>
+		</div>
+		<div class="content">
+			<span class="title">Queue</span><br>
+				<p>If you've ever been anywhere, you've probably waited in a line, or a queue. This data structure holds things in a specific order. It follows a philosophy called FIFO (First in, First Out). When you put something in, it goes to the back, and when you get something out, you get the oldest thing. Just like a queue.</p>
+		</div>
+		<div class="content">
+			<span class="title">Map</span><br>
+			<p>
+				Maps are handy. What if you want to use an array, but instead of an offset find things by a label? Use a map. What the map does is store objects in key, value pairs. It's almost like having a function, f(x) = y. You give the map x and it gives you back y. It's very nice and makes use of hash tables.
+			</p>
+		</div>
+		<div class="content">
+			<span class="title">Hash Table</span><br>
+			<p>
+				Hash Tables are a little different. The best way to think of a hash table is analyzing how passwords are stored. A hash table works like a map, except that when you have f(x) = y, you actually have f(x) as a mathematical operation. For example, if you have a password, let's say "pass", you can use the number of consonants as the hash function (your f(x) function). You can then say f(3) = 'username'. When someone tries to log in, they type their username and password. You then apply the hash function to look up the user name, and then compare usernames. If the usernames don't match you know that they put the wrong password. This gets super complicated, using modular arithmetic and manipulation of primes to ensure unique hash functions (ensuring that they're one-to-one). This is essentially the foundation of computer security. Think of it as a map with a middle man.
+			</p>
+		</div>
+		<div class="content">
+			<span class="title">Tree</span><br>
+			<p>
+				Trees are pretty handy for getting data, but be careful about putting data in it. Methods are required to ensure that data in the tree is consistent, or else everytime you insert an element, you might throw off the structure of the tree, and will mess up element retrieval.
+			</p>
+		</div>
+
+		<div class="footer">
+			<a href="#top">Rise to the Top</a><br>
+			<a href="index.html">Index</a>
+		</div>
+	</body>
+</html>
